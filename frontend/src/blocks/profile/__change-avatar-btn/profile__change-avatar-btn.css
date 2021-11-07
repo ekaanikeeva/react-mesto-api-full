@@ -1,0 +1,26 @@
+.profile__change-avatar-btn {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-image: url(../../../images/pen.png);
+  background-color: inherit;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  font: inherit;
+  margin-right: 30px;
+  position: relative;
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s, background-color 0.5s ease;
+}
+
+.profile__change-avatar-btn:hover {
+  visibility: visible;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
+}

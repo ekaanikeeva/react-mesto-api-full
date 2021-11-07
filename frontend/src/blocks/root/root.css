@@ -1,0 +1,35 @@
+body {
+  background-color: #000000;
+}
+
+.root {
+  max-width: 880px;
+  min-width: 282px;
+  background-color: #000000;
+  padding: 45px 15% 60px;
+  margin: 0 auto;
+}
+
+@media all and (min-width: 1281px) {
+  .root {
+    padding: 45px 200px 60px;
+  }
+}
+
+@media all and (max-width: 1270px) {
+  .root {
+    padding: 45px 8% 60px;
+  }
+}
+
+@media all and (max-width: 1065px) {
+  .root {
+    padding: 45px 5% 60px;
+  }
+}
+
+@media all and (max-width: 470px) {
+  .root {
+    padding: 28px 19px 36px;
+  }
+}

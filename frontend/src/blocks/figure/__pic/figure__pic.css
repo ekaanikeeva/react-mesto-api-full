@@ -1,0 +1,48 @@
+.figure__pic {
+  width: 100%;
+  height: 282px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 4%;
+  border-top-right-radius: 4%;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+@media all and (min-width: 1280px) {
+  .figure__pic {
+    width: 282px;
+    height: 282px;
+  }
+}
+
+@media all and (max-width: 856px) {
+  .figure__pic {
+    height: 280px;
+  }
+}
+
+@media all and (max-width: 660px) {
+  .figure__pic {
+    height: 240px;
+  }
+}
+
+@media all and (max-width: 570px) {
+  .figure__pic {
+    height: 200px;
+  }
+}
+
+@media all and (max-width: 470px) {
+  .figure__pic {
+    height: 89.7vw;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .figure__pic {
+    height: 282px;
+  }
+}

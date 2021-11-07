@@ -1,0 +1,28 @@
+.photo-list {
+  margin: 51px auto 67px;
+  max-width: 100%;
+}
+
+@media all and (max-width: 994px) {
+  .photo-list {
+    max-width: calc(282px * 2 + 5%);
+  }
+}
+
+@media all and (max-width: 660px) {
+  .photo-list {
+    max-width: calc(240px * 2 + 5%);
+  }
+}
+
+@media all and (max-width: 570px) {
+  .photo-list {
+    max-width: calc(200px * 2 + 5%);
+  }
+}
+
+@media all and (max-width: 480px) {
+  .photo-list {
+    margin: 36px auto 48px;
+  }
+}

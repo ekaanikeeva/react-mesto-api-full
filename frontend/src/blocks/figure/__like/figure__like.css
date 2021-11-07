@@ -1,0 +1,22 @@
+.figure__like {
+  width: 22px;
+  height: 19px;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: end;
+  margin-right: 20px;
+  background-size: 100%;
+  background-image: url("../../../images/like.svg");
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.figure__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

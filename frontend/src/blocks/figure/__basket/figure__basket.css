@@ -1,0 +1,25 @@
+.figure__basket {
+  background-image: url("../../../images/Trash.svg");
+  width: 18px;
+  height: 19.3px;
+  justify-self: end;
+  background-repeat: no-repeat;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  margin-right: 15px;
+  margin-top: 18px;
+  background-size: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  transition: opacity 1s ease;
+  z-index: 1;
+  visibility: visible;
+}
+
+.figure__basket:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

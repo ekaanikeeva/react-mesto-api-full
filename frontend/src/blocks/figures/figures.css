@@ -1,0 +1,39 @@
+.figures {
+  display: grid;
+  gap: 20px 17px;
+  grid-template-columns: repeat(auto-fill, 282px);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (max-width: 977px) {
+  .figures {
+    gap: 20px 5%;
+  }
+}
+
+@media all and (max-width: 856px) {
+  .figures {
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+@media all and (max-width: 660px) {
+  .figures {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+
+@media all and (max-width: 570px) {
+  .figures {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media all and (max-width: 470px) {
+  .figures {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+}

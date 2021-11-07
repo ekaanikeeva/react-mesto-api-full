@@ -1,0 +1,30 @@
+.profile {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: min-content max-content min-content 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 40px;
+}
+
+@media all and (max-width: 760px) {
+  .profile {
+    grid-template-columns: max-content 42% min-content 1fr;
+  }
+}
+
+@media all and (max-width: 483px) {
+  .profile {
+    grid-template-columns: max-content 49% min-content 1fr;
+    grid-template-rows: max-content min-content;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .profile {
+    grid-template-columns: 3fr 1fr;
+
+    justify-items: center;
+    align-items: center;
+    margin-top: 42px;
+  }
+}

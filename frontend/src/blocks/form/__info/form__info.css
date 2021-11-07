@@ -1,0 +1,14 @@
+.form__info {
+  width: 100%;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+.form__info:last-of-type {
+  margin-top: 30px;
+}

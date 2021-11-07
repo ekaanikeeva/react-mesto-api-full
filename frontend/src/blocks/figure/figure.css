@@ -1,0 +1,14 @@
+.figure {
+  display: grid;
+  grid-template-rows: max-content min-content;
+  grid-template-columns: auto min-content;
+  width: fit-content;
+  background-color: white;
+  border-radius: 4%;
+}
+
+@media all and (max-width: 470px) {
+  .figure {
+    width: 100%;
+  }
+}

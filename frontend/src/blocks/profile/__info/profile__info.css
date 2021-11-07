@@ -1,0 +1,20 @@
+.profile__info {
+  color: white;
+  align-self: center;
+}
+
+@media all and (max-width: 420px) {
+  .profile__info {
+    text-align: center;
+    max-width: 220px;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+}
+
+@media all and (max-width: 315px) {
+  .profile__info {
+    justify-self: start;
+    text-align: start;
+  }
+}

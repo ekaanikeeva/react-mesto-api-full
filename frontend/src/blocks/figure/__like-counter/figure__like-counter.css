@@ -1,0 +1,10 @@
+.figure__like-counter {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+  margin-top: 19px;
+}
