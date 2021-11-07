@@ -14,7 +14,17 @@ const NotFoundError = require('./errors/NotFoundError');
 const { PORT = 3000 } = process.env;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: [
+    'https://ekaanikeeva.backend.nomoredomains.rocks',
+    'https://ekaanikeeva.nomoredomains.rocks',
+    'http://ekaanikeeva.backend.nomoredomains.rocks',
+    'http://ekaanikeeva.nomoredomains.rocks',
+    'https://localhost:3000',
+    'http://localhost:3000',
+  ],
+}));
 
 app.use(express.json());
 
