@@ -5,9 +5,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 module.exports = (req, res, next) => {
   const token = req.cookies.jwt;
   let payload;
-  if (!req.cookies.jwt) {
-    throw new Unauthorized('Необходима авторизация');
-  }
+
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'oneStrongSecret25');
   } catch (err) {
