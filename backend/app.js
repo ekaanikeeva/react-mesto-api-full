@@ -26,9 +26,8 @@ app.use(cors({
   ],
 }));
 
-app.use(express.json());
-
 app.use(cookieParser());
+app.use(express.json());
 
 app.use(requestLogger);
 app.post('/signin', validateSignIn, login);
