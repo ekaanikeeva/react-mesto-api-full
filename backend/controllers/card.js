@@ -2,6 +2,7 @@ const Card = require('../models/card');
 const NotFoundError = require('../errors/NotFoundError');
 const IntervalServerError = require('../errors/Unauthorized');
 const Forbidden = require('../errors/Forbidden');
+const BadRequest = require('../errors/BadRequest');
 
 // создать новую карточку
 module.exports.createCard = (req, res, next) => {
@@ -10,7 +11,10 @@ module.exports.createCard = (req, res, next) => {
 
   Card.create({ name, link, owner: creatorId })
     .then((card) => res.send(card))
-    .catch(() => {
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        throw new BadRequest({ message: 'Ошибка валидации' });
+      }
       throw new IntervalServerError({ message: 'Не удалось добавить карточку' });
     })
     .catch(next);
@@ -20,9 +24,6 @@ module.exports.createCard = (req, res, next) => {
 module.exports.getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => res.send(cards))
-    .catch(() => {
-      throw new IntervalServerError({ message: 'Карточки не получены' });
-    })
     .catch(next);
 };
 

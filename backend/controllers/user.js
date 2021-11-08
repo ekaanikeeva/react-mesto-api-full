@@ -46,15 +46,17 @@ module.exports.createUser = (req, res, next) => {
     .then((hash) => User.create({
       name, about, avatar, email, password: hash,
     }))
+    .then(() => {
+      res.status(200).send({
+        name, about, avatar, email,
+      });
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new BadRequest({ message: 'Переданы некорректные данные при создании пользователя' });
       } else if (err.name === 'MongoServerError' && err.code === 11000) {
         throw new ConflictingRequest({ message: 'Этот email уже зарегистрирован' });
       } else throw new IntervalServerError({ message: '500- Не удалось получить данные пользователя. Произошла ошибка' });
-    })
-    .then((user) => {
-      res.send(user);
     })
     .catch(next);
 };
@@ -75,9 +77,10 @@ module.exports.editProfile = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new BadRequest({ message: 'Переданы некорректные данные при обновлении профиля' });
+      } else {
+        next(err);
       }
     })
-    .catch(next);
 };
 
 module.exports.editAvatar = (req, res, next) => {

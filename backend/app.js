@@ -9,7 +9,7 @@ const auth = require('./middlewares/auth');
 const userRouter = require('./routes/user');
 const cardsRouter = require('./routes/card');
 const { login, createUser } = require('./controllers/user');
-const { validateSignIn } = require('./middlewares/validate');
+const { validateSignIn, validateSignUp } = require('./middlewares/validate');
 const NotFoundError = require('./errors/NotFoundError');
 
 const { PORT = 3000 } = process.env;
@@ -38,15 +38,16 @@ app.get('/crash-test', () => {
   }, 0);
 });
 app.post('/signin', validateSignIn, login);
-app.post('/signup', validateSignIn, createUser);
+app.post('/signup', validateSignUp, createUser);
 app.use(auth);
 app.use(userRouter);
 app.use(cardsRouter);
-app.use(errorLogger);
-app.use(errors());
 app.use(() => {
   throw new NotFoundError({ message: '404- Ресурс не найден' });
 });
+app.use(errorLogger);
+app.use(errors());
+
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
 
