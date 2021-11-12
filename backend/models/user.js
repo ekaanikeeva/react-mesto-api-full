@@ -10,19 +10,19 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 2,
     maxlength: 30,
-    default: 'Жак-Ив Кусто',
+    default: 'Имя',
   },
   about: {
     type: String,
     required: true,
     minlength: 2,
     maxlength: 30,
-    default: 'Исследователь',
+    default: 'О себе',
   },
   avatar: {
     type: String,
     required: true,
-    default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    default: 'https://images.unsplash.com/photo-1466921583968-f07aa80c526e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5jb2duaXRvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     validate: {
       validator(link) {
         return validator.isURL(link);
