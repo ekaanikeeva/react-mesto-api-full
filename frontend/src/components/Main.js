@@ -43,7 +43,7 @@ function Main(props) {
       <section className="photo-list">
         <ul className="figures">
           {cards.map((item) => {
-            return (
+            // return (
               <Card
                 key={item._id}
                 cardData={item}
@@ -51,8 +51,9 @@ function Main(props) {
                 onCardLike={props.handleCardLike}
                 onCardDelete={props.handleCardDelete}
               />
-            );
-          })}
+            // );
+          })
+          return cards.reverse()}
         </ul>
       </section>
     </main>

@@ -81,7 +81,7 @@ module.exports.editProfile = (req, res, next) => {
         next(err);
       }
     })
-};
+  }
 
 module.exports.editAvatar = (req, res, next) => {
   const { avatar } = req.body;
